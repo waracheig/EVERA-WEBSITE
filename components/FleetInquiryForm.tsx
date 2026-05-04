@@ -41,6 +41,13 @@ export default function FleetInquiryForm({
         throw new Error(data.error || "Submission failed");
       }
       setStatus("success");
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "form_submit", {
+          form_source: source,
+          form_segment: payload.segment,
+          form_size: payload.size,
+        });
+      }
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Something went wrong");

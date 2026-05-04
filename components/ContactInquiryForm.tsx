@@ -34,6 +34,12 @@ export default function ContactInquiryForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || "Submission failed");
       setStatus("success");
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "form_submit", {
+          form_source: "contact",
+          form_segment: payload.segment,
+        });
+      }
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Something went wrong");
