@@ -5,7 +5,7 @@ import { ecosystem } from "@/lib/site";
 export const metadata = {
   title: "Our EV Ecosystem — Six Businesses Powering Phuket's Transition",
   description:
-    "EvEra's six businesses in Phuket: Easy Super Charge (charging network), EasyVolt Fleet (EV taxi), Phuket EV Drive (EV rental), EV Fleet Solutions (corporate fleet), Flagship 880kW Hub, and Prime EV Mobility (vans + buses).",
+    "EvEra's six businesses in Phuket: Easy Super Charge (charging network), Easy Volt Fleet (EV taxi), Phuket EV Drive (EV rental), EV Fleet Solutions (corporate fleet), Flagship 880kW Hub, and Prime EV Mobility (vans + buses).",
   keywords: [
     "EV ecosystem Phuket",
     "EvEra businesses",

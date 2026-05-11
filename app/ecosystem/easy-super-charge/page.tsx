@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "How do I pay for charging?",
-    a: "Pay via the Easy Super Charge app or QR-code at the charger — debit card, credit card, and Thai mobile banking are supported. EvEra Corporate Fleet and EasyVolt taxi customers are pre-authorised on a corporate account.",
+    a: "Pay via the Easy Super Charge app or QR-code at the charger — debit card, credit card, and Thai mobile banking are supported. EvEra Corporate Fleet and Easy Volt taxi customers are pre-authorised on a corporate account.",
   },
   {
     q: "Are EvEra charging stations open 24/7?",

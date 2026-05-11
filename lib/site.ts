@@ -37,8 +37,8 @@ export const ecosystem = [
   },
   {
     slug: "easyvolt-fleet",
-    title: "EasyVolt Fleet",
-    summary: "250+ EV taxis under EasyVolt and Erawan Volt — operating 24/7 island-wide.",
+    title: "Easy Volt Fleet",
+    summary: "250+ EV taxis under Easy Volt and Erawan Volt — operating 24/7 island-wide.",
     icon: "taxi",
     href: "/ecosystem/easyvolt-fleet",
   },

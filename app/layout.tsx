@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "EvEra",
     "Easy Super Charge",
     "Phuket EV Drive",
-    "EasyVolt",
+    "Easy Volt",
   ],
   authors: [{ name: "EvEra" }],
   creator: "EvEra",

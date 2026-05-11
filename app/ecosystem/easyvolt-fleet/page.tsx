@@ -4,22 +4,22 @@ import Image from "next/image";
 import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
-  title: "EasyVolt Fleet — 250+ EV Taxis in Phuket",
+  title: "Easy Volt Fleet — 250+ EV Taxis in Phuket",
   description:
-    "EasyVolt and Erawan Volt — 250+ electric taxis operating 24/7 in Phuket. The island's largest EV taxi fleet, running entirely on the EvEra charging network. แท็กซี่ไฟฟ้า ภูเก็ต.",
+    "Easy Volt and Erawan Volt — 250+ electric taxis operating 24/7 in Phuket. The island's largest EV taxi fleet, running entirely on the EvEra charging network. แท็กซี่ไฟฟ้า ภูเก็ต.",
   keywords: [
     "EV taxi Phuket",
     "แท็กซี่ไฟฟ้า ภูเก็ต",
-    "EasyVolt",
+    "Easy Volt",
     "Erawan Volt",
     "Phuket airport transfer EV",
     "MG EP+ taxi",
     "electric taxi Thailand",
   ],
   openGraph: {
-    title: "EasyVolt Fleet — Phuket's Largest EV Taxi Fleet",
+    title: "Easy Volt Fleet — Phuket's Largest EV Taxi Fleet",
     description:
-      "250+ EV taxis operating 24/7 in Phuket under the EasyVolt and Erawan Volt brands.",
+      "250+ EV taxis operating 24/7 in Phuket under the Easy Volt and Erawan Volt brands.",
     images: ["/assets/fleet/EasyVolt-Fleet.jpg"],
   },
 };
@@ -47,7 +47,7 @@ export default function Page() {
         <div className="absolute inset-0">
           <Image
             src="/assets/fleet/EasyVolt-Fleet.jpg"
-            alt="EasyVolt EV taxi fleet operating in Phuket — 250+ electric taxis"
+            alt="Easy Volt EV taxi fleet operating in Phuket — 250+ electric taxis"
             fill
             sizes="100vw"
             className="object-cover opacity-75"
@@ -57,13 +57,13 @@ export default function Page() {
         </div>
         <div className="relative container-x py-24 md:py-32">
           <p className="eyebrow text-brand-green">
-            <span className="h-px w-6 bg-brand-green" /> EasyVolt Fleet
+            <span className="h-px w-6 bg-brand-green" /> Easy Volt Fleet
           </p>
           <h1 className="mt-6 max-w-3xl text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
             Phuket's largest EV taxi fleet.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">
-            EasyVolt and Erawan Volt — 250+ electric taxis covering Phuket
+            Easy Volt and Erawan Volt — 250+ electric taxis covering Phuket
             island-wide, 24/7. Every vehicle charges exclusively on the EvEra
             network.
           </p>
@@ -98,7 +98,7 @@ export default function Page() {
               <div key={p} className="relative aspect-[4/3] overflow-hidden rounded-xl border border-line">
                 <Image
                   src={p}
-                  alt="EasyVolt EV taxi fleet operating in Phuket"
+                  alt="Easy Volt EV taxi fleet operating in Phuket"
                   fill
                   sizes="(max-width: 1024px) 50vw, 380px"
                   className="object-cover"

@@ -95,7 +95,7 @@ export default function ContactInquiryForm() {
           <option>Corporate Fleet</option>
           <option>Charging Partnership</option>
           <option>EV Rental</option>
-          <option>EasyVolt Fleet / Taxi</option>
+          <option>Easy Volt Fleet / Taxi</option>
           <option>Government / Public Sector</option>
           <option>Other</option>
         </select>
