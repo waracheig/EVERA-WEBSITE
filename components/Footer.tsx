@@ -1,11 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export default function Footer() {
   const { t, locale } = useI18n();
+  const pathname = usePathname();
+
+  // Hide global footer on standalone one-page demos
+  if (pathname?.startsWith("/onepage")) return null;
 
   const nav = [
     { label: t.nav.home, href: "/" },

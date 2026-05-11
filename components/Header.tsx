@@ -12,6 +12,9 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { t } = useI18n();
 
+  // Hide global header on standalone one-page demos
+  if (pathname?.startsWith("/onepage")) return null;
+
   const nav = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.about, href: "/about" },
