@@ -5,7 +5,7 @@ import Icon from "@/components/Icon";
 import FleetInquiryForm from "@/components/FleetInquiryForm";
 import FaqSection from "@/components/FaqSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { fleetModels, site } from "@/lib/site";
+import { fleetModels, utilityFleet, site } from "@/lib/site";
 
 const faqs = [
   {
@@ -40,12 +40,20 @@ const faqs = [
     q: "How long does deployment take after we sign?",
     a: "Typical fleet deployment is 4–8 weeks from signed agreement to vehicles on the road, depending on size and customisation (livery, in-vehicle hardware, depot integration).",
   },
+  {
+    q: "Do you offer EV utility trucks for เทศบาล / อบจ.?",
+    a: "Yes — EvEra supplies electric road sweepers, garbage compactors, and dust-suppression trucks for municipalities, อบจ., construction operators, and private waste-management companies. Procurement is structured to meet Thai government compliance (EV30@30, TGO methodology). Contact us for spec sheets and a tailored proposal.",
+  },
+  {
+    q: "Are utility trucks available under the all-inclusive monthly model?",
+    a: "Both options are available. Many municipalities procure utility trucks as a capex (one-time purchase with service contract); private operators often prefer the all-inclusive monthly model with maintenance, parts, and charging bundled. We tailor to your accounting and procurement framework.",
+  },
 ];
 
 export const metadata: Metadata = {
-  title: "EV Fleet Solutions — Corporate EV Fleet Phuket",
+  title: "EV Fleet Solutions — Corporate + Municipal EV Fleet Phuket",
   description:
-    "EV Fleet Solutions by EvEra — all-inclusive monthly corporate EV fleet in Phuket. No down payment, Class 1 insurance, free charging, full maintenance, ESG carbon report included. For hotels, corporate, government, industrial.",
+    "EV Fleet Solutions by EvEra — all-inclusive monthly corporate EV fleet + electric utility trucks (sweeper, garbage compactor, dust suppression) for เทศบาล / อบจ. and private operators in Phuket. No down payment, Class 1 insurance, free charging, full maintenance, ESG carbon report.",
   keywords: [
     "EV fleet Thailand",
     "corporate EV fleet Phuket",
@@ -55,11 +63,19 @@ export const metadata: Metadata = {
     "MG4 EV Thailand",
     "MG S5 EV",
     "Riddara pickup EV",
+    "EV utility truck Thailand",
+    "รถกวาดถนนไฟฟ้า",
+    "รถขยะไฟฟ้า",
+    "รถฉีดน้ำลดฝุ่นไฟฟ้า",
+    "EV municipal fleet Phuket",
+    "EV30@30 procurement",
+    "เทศบาล EV",
+    "อบจ. รถยนต์ไฟฟ้า",
   ],
   openGraph: {
-    title: "EV Fleet Solutions — Corporate EV Fleet Phuket",
+    title: "EV Fleet Solutions — Corporate + Municipal EV Fleet Phuket",
     description:
-      "All-inclusive monthly EV fleet for hotels, corporate, government and industrial. No down payment, Class 1 insurance, free charging, full maintenance.",
+      "All-inclusive monthly EV fleet + electric utility trucks for hotels, corporate, government, อบจ., เทศบาล, and industrial operators.",
     images: ["/assets/fleet/EasyVolt-Fleet.jpg"],
   },
 };
@@ -85,13 +101,13 @@ const segments = [
     icon: "shield",
   },
   {
-    title: "Government / อบจ.",
-    body: "EV30@30-aligned procurement with vendor compliance documentation.",
+    title: "Government / อบจ. / เทศบาล",
+    body: "EV utility trucks (sweeper, compactor, dust suppression) plus passenger fleet — EV30@30-aligned procurement with full vendor compliance documentation.",
     icon: "spark",
   },
   {
     title: "Industrial / Logistics",
-    body: "Riddara pickup deployments for utility, service, and Scope 3 reduction.",
+    body: "Riddara pickup + utility-truck deployments for service operations and Scope 3 reduction.",
     icon: "hub",
   },
 ];
@@ -237,6 +253,78 @@ export default function CorporateFleetPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* UTILITY TRUCKS — MUNICIPAL & GOVERNMENT */}
+      <section className="bg-white">
+        <div className="container-x py-20 md:py-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="eyebrow">Municipal & Government</p>
+              <h2 className="mt-3 text-3xl md:text-4xl">
+                EV Utility Trucks — clean operations for cities.
+              </h2>
+              <p className="mt-4 text-ink-mid leading-relaxed">
+                Purpose-built electric work trucks for เทศบาล, อบจ., and
+                construction operators — eligible for Thailand's EV30@30
+                procurement framework, and quiet enough for early-morning routes
+                near hotels and residential zones.
+              </p>
+            </div>
+            <p className="text-xs uppercase tracking-[0.18em] text-ink-light">
+              Pricing on request
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {utilityFleet.map((u) => (
+              <article
+                key={u.name}
+                className="card overflow-hidden flex flex-col"
+              >
+                <div className="relative aspect-[4/3] bg-canvas">
+                  <Image
+                    src={u.image}
+                    alt={`${u.name} — EvEra EV Fleet Solutions for Phuket municipal operations`}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 380px"
+                    className="object-contain p-6"
+                  />
+                </div>
+                <div className="border-t border-line p-6 flex-1 flex flex-col">
+                  <p className="text-xs uppercase tracking-[0.16em] text-brand-green-dark">
+                    {u.type}
+                  </p>
+                  <h3 className="mt-2 text-lg">{u.name}</h3>
+                  <p className="mt-2 text-sm text-ink-mid leading-relaxed">
+                    {u.description}
+                  </p>
+                  <ul className="mt-5 grid gap-2 text-sm">
+                    {u.benefits.map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-ink-mid">
+                        <Icon
+                          name="check"
+                          className="h-4 w-4 mt-0.5 shrink-0 text-brand-green-dark"
+                          strokeWidth={2.6}
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 pt-4 border-t border-line text-xs uppercase tracking-[0.14em] text-ink-light">
+                    Use case · {u.useCase}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-10 max-w-3xl text-xs text-ink-light leading-relaxed">
+            * Specifications, payload, and configuration available on request.
+            EvEra handles import, registration, depot charging integration, and
+            after-sales service for every municipal-fleet customer.
+          </p>
         </div>
       </section>
 

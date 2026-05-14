@@ -116,3 +116,33 @@ export const fleetModels = [
     description: "Workhorse pickup for industrial, logistics, and service operations.",
   },
 ];
+
+export const utilityFleet = [
+  {
+    name: "EV Road Sweeper Truck",
+    type: "Municipal Utility EV",
+    useCase: "Street cleaning",
+    image: "/assets/fleet/ev-fleet-solutions/EV_Road_Sweeper_Truck.png",
+    description:
+      "Quiet, zero-emission road sweeping for municipal streets and large estates — replace diesel sweepers on daily cleaning routes.",
+    benefits: ["Zero tailpipe emissions", "Low-noise operation (early-morning routes)", "Lower TCO vs diesel"],
+  },
+  {
+    name: "EV Garbage Compactor Truck",
+    type: "Municipal Utility EV",
+    useCase: "Waste collection",
+    image: "/assets/fleet/ev-fleet-solutions/EV_Garbage_Compactor_Truck.png",
+    description:
+      "Electric rear-loader compactor for waste collection routes — designed for municipalities, อบจ., and private waste operators in tourism zones.",
+    benefits: ["Clean operation near hotels & residential areas", "Quiet night routes possible", "EV30@30 procurement-eligible"],
+  },
+  {
+    name: "EV Dust Suppression Truck",
+    type: "Construction & Municipal EV",
+    useCase: "Dust control / road spraying",
+    image: "/assets/fleet/ev-fleet-solutions/EV_Dust_Suppression_Truck.png",
+    description:
+      "High-pressure water-mist truck for construction sites, road dust mitigation, and air-quality compliance — clean operation in PM2.5-sensitive areas.",
+    benefits: ["Reduces PM10/PM2.5 on construction sites", "No exhaust where air quality matters", "Long-distance mist spray"],
+  },
+];
