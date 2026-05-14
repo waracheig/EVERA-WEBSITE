@@ -90,7 +90,8 @@ export const networkCapacity = {
   total: 5120,
 };
 
-export const fleetModels = [
+// Passenger Fleet — executive, pool, airport transfer
+export const passengerFleet = [
   {
     name: "MG4 D Standard Range",
     type: "Hatchback EV",
@@ -107,17 +108,26 @@ export const fleetModels = [
     image: "/assets/fleet/MG S5.png",
     description: "Premium SUV for hotel airport transfers and executive transport.",
   },
+];
+
+// Backwards-compat alias — older imports / future code may reference fleetModels
+export const fleetModels = passengerFleet;
+
+// Utility Fleet — pickup + municipal/utility trucks
+export const utilityFleet = [
   {
     name: "Riddara Econ 63 kWh",
     type: "Pickup EV",
-    range: "380 km",
-    charge: "80 kW DC",
+    useCase: "Service operations / industrial transport",
     image: "/assets/fleet/Riddara Econ 63kWh.png",
-    description: "Workhorse pickup for industrial, logistics, and service operations.",
+    description:
+      "Workhorse electric pickup for fleet maintenance, hotel back-of-house, industrial supply runs, and government service vehicles.",
+    benefits: [
+      "380 km range · 80 kW DC fast charging",
+      "Class 1 cargo capacity for daily work",
+      "Drop-in replacement for diesel pickups",
+    ],
   },
-];
-
-export const utilityFleet = [
   {
     name: "EV Road Sweeper Truck",
     type: "Municipal Utility EV",
@@ -125,7 +135,11 @@ export const utilityFleet = [
     image: "/assets/fleet/ev-fleet-solutions/EV_Road_Sweeper_Truck.png",
     description:
       "Quiet, zero-emission road sweeping for municipal streets and large estates — replace diesel sweepers on daily cleaning routes.",
-    benefits: ["Zero tailpipe emissions", "Low-noise operation (early-morning routes)", "Lower TCO vs diesel"],
+    benefits: [
+      "Zero tailpipe emissions",
+      "Low-noise operation (early-morning routes)",
+      "Lower TCO vs diesel",
+    ],
   },
   {
     name: "EV Garbage Compactor Truck",
@@ -134,7 +148,11 @@ export const utilityFleet = [
     image: "/assets/fleet/ev-fleet-solutions/EV_Garbage_Compactor_Truck.png",
     description:
       "Electric rear-loader compactor for waste collection routes — designed for municipalities, อบจ., and private waste operators in tourism zones.",
-    benefits: ["Clean operation near hotels & residential areas", "Quiet night routes possible", "EV30@30 procurement-eligible"],
+    benefits: [
+      "Clean operation near hotels & residential areas",
+      "Quiet night routes possible",
+      "EV30@30 procurement-eligible",
+    ],
   },
   {
     name: "EV Dust Suppression Truck",
@@ -143,6 +161,10 @@ export const utilityFleet = [
     image: "/assets/fleet/ev-fleet-solutions/EV_Dust_Suppression_Truck.png",
     description:
       "High-pressure water-mist truck for construction sites, road dust mitigation, and air-quality compliance — clean operation in PM2.5-sensitive areas.",
-    benefits: ["Reduces PM10/PM2.5 on construction sites", "No exhaust where air quality matters", "Long-distance mist spray"],
+    benefits: [
+      "Reduces PM10 / PM2.5 on construction sites",
+      "No exhaust where air quality matters",
+      "Long-distance mist spray",
+    ],
   },
 ];

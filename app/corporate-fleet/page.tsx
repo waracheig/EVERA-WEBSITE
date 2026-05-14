@@ -5,7 +5,7 @@ import Icon from "@/components/Icon";
 import FleetInquiryForm from "@/components/FleetInquiryForm";
 import FaqSection from "@/components/FaqSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { fleetModels, utilityFleet, site } from "@/lib/site";
+import { passengerFleet, utilityFleet, site } from "@/lib/site";
 
 const faqs = [
   {
@@ -46,7 +46,11 @@ const faqs = [
   },
   {
     q: "Are utility trucks available under the all-inclusive monthly model?",
-    a: "Both options are available. Many municipalities procure utility trucks as a capex (one-time purchase with service contract); private operators often prefer the all-inclusive monthly model with maintenance, parts, and charging bundled. We tailor to your accounting and procurement framework.",
+    a: "Yes — both options are available. The all-inclusive monthly model covers vehicle, insurance, and maintenance; you can optionally add an Energy Package that bundles unlimited charging at EvEra stations and/or on-site depot charging. Many municipalities procure utility trucks as capex (one-time purchase with service contract); private operators often prefer monthly OPEX with the Energy Package added. We tailor to your accounting framework.",
+  },
+  {
+    q: "What is the Energy Package?",
+    a: "An optional add-on to any monthly fleet contract — unlimited charging at all 9 EvEra public stations and/or installation + operation of dedicated depot chargers at your site. Effectively replaces your fuel budget with a flat predictable monthly figure, with audit-ready energy reporting included.",
   },
 ];
 
@@ -83,31 +87,31 @@ export const metadata: Metadata = {
 const benefits = [
   { title: "No down payment", body: "Operate as monthly OPEX — no vehicle purchase, no capex." },
   { title: "Class 1 insurance included", body: "Full first-class coverage for every vehicle in the contract." },
-  { title: "Free charging at all EvEra stations", body: "Unlimited charging across our 9-station network." },
+  { title: "Optional Energy Package", body: "Unlimited charging at all EvEra stations + dedicated depot chargers — flat predictable monthly figure." },
   { title: "Full maintenance included", body: "Scheduled service, tyres, and 24/7 roadside support." },
-  { title: "New vehicles, latest models", body: "Brand-new MG and Riddara EVs — refreshed on cycle." },
-  { title: "Single accountable contract", body: "One operator. One invoice. One ESG report." },
+  { title: "Passenger + utility under one contract", body: "Mix MG4 / S5 with Riddara pickups and municipal trucks — one invoice." },
+  { title: "Audit-ready ESG report", body: "Monthly Carbon Report + annual certificate per TGO T-VER methodology." },
 ];
 
 const segments = [
   {
     title: "Hotels & Resorts",
-    body: "Airport transfer, guest shuttle, and green-hotel certification support.",
+    body: "MG S5 SUVs for airport transfer, MG4 for guest shuttles, plus Riddara pickups for back-of-house — green-hotel certification support included.",
     icon: "building",
   },
   {
     title: "Corporate / SET-listed",
-    body: "Pool fleets, executive transport, and Scope 1 reduction at scale.",
+    body: "Pool fleets, executive transport, and Scope 1 reduction at scale. Bundled ESG reporting per TGO methodology.",
     icon: "shield",
   },
   {
     title: "Government / อบจ. / เทศบาล",
-    body: "EV utility trucks (sweeper, compactor, dust suppression) plus passenger fleet — EV30@30-aligned procurement with full vendor compliance documentation.",
+    body: "Passenger fleet + EV utility trucks (sweeper, compactor, dust suppression) — EV30@30-aligned procurement with full vendor compliance docs.",
     icon: "spark",
   },
   {
-    title: "Industrial / Logistics",
-    body: "Riddara pickup + utility-truck deployments for service operations and Scope 3 reduction.",
+    title: "Construction · Waste · Industrial",
+    body: "Dust-suppression trucks for sites, compactors for private waste operators, Riddara pickups and utility EVs for airports / industrial estates.",
     icon: "hub",
   },
 ];
@@ -193,18 +197,18 @@ export default function CorporateFleetPage() {
         </div>
       </section>
 
-      {/* FLEET MODELS */}
+      {/* PASSENGER FLEET — Executive & Pool */}
       <section className="bg-canvas">
         <div className="container-x py-20 md:py-24">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="eyebrow">Fleet Models</p>
+              <p className="eyebrow">Passenger Fleet</p>
               <h2 className="mt-3 text-3xl md:text-4xl">
-                Choose the right EV for every role.
+                Executive transport, airport transfer, pool fleets.
               </h2>
               <p className="mt-4 text-ink-mid leading-relaxed">
-                Three workhorse platforms covering hatchback, SUV, and pickup —
-                all maintained and charged on the EvEra network.
+                Two passenger platforms — hatchback and SUV — for hotels,
+                corporate offices, and executive shuttles.
               </p>
             </div>
             <p className="text-xs uppercase tracking-[0.18em] text-ink-light">
@@ -212,8 +216,8 @@ export default function CorporateFleetPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {fleetModels.map((m) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+            {passengerFleet.map((m) => (
               <article
                 key={m.name}
                 className="card overflow-hidden flex flex-col"
@@ -221,9 +225,9 @@ export default function CorporateFleetPage() {
                 <div className="relative aspect-[4/3] bg-canvas">
                   <Image
                     src={m.image}
-                    alt={m.name}
+                    alt={`${m.name} — EvEra EV Fleet Solutions passenger vehicle`}
                     fill
-                    sizes="(max-width: 1024px) 50vw, 380px"
+                    sizes="(max-width: 768px) 100vw, 500px"
                     className="object-contain p-6"
                   />
                 </div>
@@ -256,20 +260,21 @@ export default function CorporateFleetPage() {
         </div>
       </section>
 
-      {/* UTILITY TRUCKS — MUNICIPAL & GOVERNMENT */}
+      {/* UTILITY FLEET — Pickup + Municipal Trucks */}
       <section className="bg-white">
         <div className="container-x py-20 md:py-24">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="eyebrow">Municipal & Government</p>
+              <p className="eyebrow">Utility Fleet</p>
               <h2 className="mt-3 text-3xl md:text-4xl">
-                EV Utility Trucks — clean operations for cities.
+                Pickup + Municipal EVs — work-ready, clean operations.
               </h2>
               <p className="mt-4 text-ink-mid leading-relaxed">
-                Purpose-built electric work trucks for เทศบาล, อบจ., and
-                construction operators — eligible for Thailand's EV30@30
-                procurement framework, and quiet enough for early-morning routes
-                near hotels and residential zones.
+                One electric pickup plus three purpose-built municipal trucks
+                — for เทศบาล, อบจ., construction operators, private waste
+                operators, and airport / industrial estates. Eligible for
+                Thailand's EV30@30 procurement framework, and quiet enough for
+                early-morning routes near hotels and residential zones.
               </p>
             </div>
             <p className="text-xs uppercase tracking-[0.18em] text-ink-light">
@@ -277,7 +282,7 @@ export default function CorporateFleetPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {utilityFleet.map((u) => (
               <article
                 key={u.name}
@@ -288,8 +293,8 @@ export default function CorporateFleetPage() {
                     src={u.image}
                     alt={`${u.name} — EvEra EV Fleet Solutions for Phuket municipal operations`}
                     fill
-                    sizes="(max-width: 1024px) 50vw, 380px"
-                    className="object-contain p-6"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                    className="object-contain p-5"
                   />
                 </div>
                 <div className="border-t border-line p-6 flex-1 flex flex-col">
