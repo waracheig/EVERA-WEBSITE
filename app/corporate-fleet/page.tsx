@@ -282,19 +282,19 @@ export default function CorporateFleetPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
             {utilityFleet.map((u) => (
               <article
                 key={u.name}
                 className="card overflow-hidden flex flex-col"
               >
-                <div className="relative aspect-[4/3] bg-canvas">
+                <div className="relative aspect-[3/2] bg-canvas">
                   <Image
                     src={u.image}
                     alt={`${u.name} — EvEra EV Fleet Solutions for Phuket municipal operations`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
-                    className="object-contain p-5"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-contain p-8"
                   />
                 </div>
                 <div className="border-t border-line p-6 flex-1 flex flex-col">
