@@ -61,10 +61,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/assets/stations/480kW OneCharge Old Town.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "EvEra 480kW DC fast charging station in Phuket Old Town",
+        alt: "EvEra — Phuket's Complete EV Ecosystem",
       },
     ],
   },
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "EvEra — Phuket's Complete EV Ecosystem",
     description:
       "Corporate EV fleet, EV taxi, EV rental, and Phuket's fastest-growing charging network.",
-    images: ["/assets/stations/480kW OneCharge Old Town.jpg"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,

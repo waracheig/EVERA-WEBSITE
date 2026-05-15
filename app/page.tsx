@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   description:
     "Phuket's complete EV ecosystem — 250+ corporate EV fleet, 9 DC fast-charging stations (5,120kW), EV taxi and EV rental. One operator, one contract, one ESG report. ระบบนิเวศ EV ครบวงจรในภูเก็ต.",
   alternates: { canonical: "/" },
+  openGraph: {
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "EvEra — Phuket's Complete EV Ecosystem",
+      },
+    ],
+  },
 };
 
 const localBusinessJsonLd = {
@@ -19,7 +29,7 @@ const localBusinessJsonLd = {
   name: "EvEra — Phuket EV Ecosystem",
   description:
     "Operator of 9 EV charging stations, 250+ EV taxi fleet, EV rental, and corporate EV fleet solutions in Phuket, Thailand.",
-  image: "/assets/stations/480kW OneCharge Old Town.jpg",
+  image: "/og-image.jpg",
   telephone: "+66-92-279-6111",
   email: "ev@easynetwork.co.th",
   address: {
